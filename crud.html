@@ -5,36 +5,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../CSS/crud.css" />
+    <link rel="stylesheet" href="crud.css" />
   </head>
   <body>
-    <ul>
+    <ul id="ul">
       <li>
         <input type="text" name="text" id="input" />
-        <button id="button">ADD</button>
+        <button type="submit" id="button">ADD</button>
+        <!-- <input type="submit" id="button" value=""> -->
       </li>
       <br />
       <li>
-        <input type="checkbox" name="" id="" />
+        <input type="checkbox" class="checkbox" name="" id="" />
         <p>learn DOM</p>
       </li>
     </ul>
     <script>
-        let input = document.getElementById("input");
-        let button = document.getElementById("button");
-        button.addEventListener("click", onclick);
-        let data;
-        function onclick(e,) {
-             data = input.value;
-             console.log(data);
-            
-        }
-        function li(){
-          var li = document.createElement('li');
+      // element selection
+      let ul = document.getElementById("ul");
+      let input = document.getElementById("input");
+      let button = document.getElementById("button");
+      let chb = document.getElementsByClassName("checkbox");
+      chb.type = "checkbox";
+      let data;
 
+      //function for creating the html element from the data
+      function list() {
+        var li = document.createElement("li");
+        var p = document.createElement("p");
+        var cb = document.createElement("input");
+        cb.className += "checkbox";
+        console.log(cb);
+        cb.type = "checkbox";
+        ul.append(li);
+        li.append(cb);
+        li.append(p);
+        p.append(data);
+      }
+
+      // getting data from the textbox and passing it to list function if the data is not empty
+      function onclick() {
+        data = input.value;
+        console.log(data);
+        if (data == "") {
+        } else {
+          list(data);
+          input.value = " ";
         }
-        console.log(input);
-        
+      }
+
+      // adding a event listener to the submit button for creating a new task item
+      button.addEventListener("click", onclick);
+
+      // chb.forEach(function (box) {
+      //   box.addEventListener("click", function () {
+      //     console.log("sucess!");
+      //   });
+      // });
+
+      // function remove() {
+      //   console.log("checked");
+      // }
+
+
+      
+      chb
+      if(chb.checked){
+        alert("checkbox checked!");
+      }
     </script>
   </body>
 </html>
