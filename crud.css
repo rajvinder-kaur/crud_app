@@ -11,14 +11,14 @@ ul{
     justify-content: space-evenly;
     padding: 0%;
 }
-input,button{
+input,#button{
     /* width: 100%; */
     position: relative;
     height: 20%;
     left: 20%;
 
 }
-button{
+#button{
   margin-left: 0%;
   padding-left: 0%;
 }
@@ -35,4 +35,13 @@ p{
     display: inline;
     position: relative;
     left: 30%;
+}
+span{
+  position: absolute;
+  /* background-color: rgba(165, 42, 42, 0.514); */
+  left: 90%;
+  height:50%;
+  width: 5%;
+  /* border-radius: 50%; */
+  /* aspect-ratio: 1; */
 }
