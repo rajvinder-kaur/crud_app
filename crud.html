@@ -1,85 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://kit.fontawesome.com/f029a601af.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="crud.css" />
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-  </head>
-  <body>
-    <ul id="ul">
-      <li>
-        <input type="text" name="text" id="input" />
-        <button type="submit" id="button">ADD</button>
-        <!-- <input type="submit" id="button" value=""> -->
-      </li>
-      <li>
-        <!-- <input type="checkbox" class="checkbox" name="" id="" /> -->
-        <p>learn DOM</p>
-        <span><i class="fa fa-check-circle-o" id="icon" aria-hidden="true"></i></span>
-      </li>
-    </ul>
-    <script>
-      // element selection
-      let ul = document.getElementById("ul");
-      let input = document.getElementById("input");
-      let button = document.getElementById("button");
-      let chb = document.getElementsByClassName("checkbox");
-      let done = dcoument.getElementById("icon");
-      // chb.type = "checkbox";
-      let data;
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+<link rel="stylesheet" href="crud.css" />
+</head>
+<body>
+<ul id="ul">
+  <li id="entry">
+    <input type="text" id="title" placeholder="title">
+    <input type="text" name="text" id="dtn" placeholder="description" />
+    <button type="submit" id="button">ADD</button>
+  </li>
+  <br />
+</ul>
+<script>
+  // element selection
+  let ul = document.getElementById("ul");
+  let title = document.getElementById("title");
+  let dtn = document.getElementById("dtn");
+  let button = document.getElementById("button");
+  let chb = document.getElementsByClassName("checkbox");
+  let div = document.getElementById("div");
+  chb.type = "checkbox";
+  let td,dd;
 
-      //function for creating the html element from the data
-      function list() {
-        var li = document.createElement("li");
-        var p = document.createElement("p");
-        var span = document.createElement("span");
-        var icon = document.createElement(`i`);
-        icon.className += "fa fa-check-circle-o";
-        icon.setAttribute('aria-hidden',true);
-        // cb.className += "checkbox";
-        console.log(span);
-        // cb.type = "checkbox";
-        ul.append(li);
-        li.append(span);
-        span.append(icon);
-        li.append(p);
-        p.append(data);
-      }
+  // getting data from the textbox and passing it to list function if the data is not empty
+  function onclick() {
+    td = title.value;
+    dd = dtn.value;
+    console.log(td);
+    if (td && dd) {
+      localStorage.setItem(td,dd);
+      location.reload();
+    }
+  }
 
-      // getting data from the textbox and passing it to list function if the data is not empty
-      function onclick() {
-        data = input.value;
-        console.log(data);
-        if (data === "") {
-        } else {
-          list(data);
-          input.value = " ";
-        }
-      }
+  for(let i = 0; i<localStorage.length;i++){
+    const key = localStorage.key(i);
+    const item = localStorage.getItem(key);
+    var li = document.createElement("li");
+    li.className += `${key}`;
+    ul.append(li);
+    li.innerHTML =` <input type="checkbox" class="checkbox" name="" id="" onchange="remove(this)" />
+    <span>${key}</span><br>
+    <p>${item}</p>`;
+  }
+  // adding a event listener to the submit button for creating a new task item
+  button.addEventListener("click", onclick);
 
-      // adding a event listener to the submit button for creating a new task item
-      button.addEventListener("click", onclick);
-
-      function remove(e){
-         e.
-      }
-
-      icon.addEventListener("click",remove);
-
-      // chb.forEach(function (box) {
-      //   box.addEventListener("click", function () {
-      //     console.log("sucess!");
-      //   });
-      // });
-
-      // function remove() {
-      //   console.log("checked");
-      // }
-
-    </script>
-  </body>
+function remove(e){
+ e.parentElement.remove();
+ const li = e.parentElement;
+ var key = li.className;
+ window.localStorage.removeItem(key);
+}
+</script>
+</body>
 </html>
