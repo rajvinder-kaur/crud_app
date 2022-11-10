@@ -3,8 +3,13 @@
 html{
   font-family: 'Gochi Hand', cursive;
   background: linear-gradient();
-  background-color: black;
-  font-size: larger;
+  /* background-color: black; */
+  font-size: 2.5rem;
+  overflow-y: scroll;
+  padding-top: 100px;
+}
+::-webkit-scrollbar{
+  display: none;
 }
 body{
   background-color: #a39bd2;
@@ -14,7 +19,7 @@ body{
   transform: translate(-50%,-50%);
     top:50%;
     left:50%;
-    width: 70%;
+    width: 70vw;
 }
 ul{
     position: absolute;
@@ -35,12 +40,13 @@ ul{
 }
 #heading{
   transform: rotate(2deg);
-  padding: 0.2rem 1.2rem;
   border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
   background-color: hsla(166, 100%, 50%, 0.7);
-  font-size: 250%;
+  font-size:200%;
+  text-align: center;
   margin-bottom: 0%;
   color: #3b4747;
+  width: fit-content;
 }
 input,#button{
     position: relative;
@@ -58,10 +64,15 @@ input,#button{
   color:#ffffff;
   padding: 6px;
   aspect-ratio: 1;
-  width: 5%;
+  width: 7%;
+  height: 7%;
 }
 input[type=text]{
     margin-left: 5%;
+    width: 23%;
+    padding: 1.5%;
+    font-size: 0.6rem;
+    color:#5f6363;
     border-bottom:5px dashed pink;
     border-top: none;
     border-left: none;
@@ -73,6 +84,7 @@ li{
   margin: 2%;
   width: 100%;
   height: 50%;
+  overflow: scroll;
 }
 .checkbox{
   position: relative;
@@ -84,8 +96,8 @@ p{
     display: inline;
     position: relative;
     left: 13%;
-    font-size:10px;
-    color:rgba(100, 100, 119, 0.788);
+    font-size:0.5rem;
+    color:rgba(100, 100, 119, 0.384);
     font-weight: 600;
 }
  #entry{
@@ -94,7 +106,7 @@ p{
  }
  span{
   font-weight:700;
-  font-size: 20px;
+  font-size: 0.6rem;
   color: rgba(90, 154, 156, 0.884);
  }
  h6{
