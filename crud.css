@@ -1,6 +1,28 @@
+
+@import url('https://fonts.googleapis.com/css?family=Gochi+Hand');
+html{
+  font-family: 'Gochi Hand', cursive;
+  background: linear-gradient();
+  background-color: black;
+  font-size: larger;
+}
+body{
+  background-color: #a39bd2;
+}
+.container{
+  position: absolute;
+  transform: translate(-50%,-50%);
+    top:50%;
+    left:50%;
+    width: 70%;
+}
 ul{
     position: absolute;
-    background-color: rgba(0, 0, 255, 0.116);
+    background: #f1f5f8;
+    background-image: radial-gradient(#bfc0c1 7.2%, transparent 0);
+    background-size: 25px 25px;
+    border-radius: 40px;
+    box-shadow: 4px 3px 7px 2px #00000040;
     width: 45vw;
     transform: translate(-50%,-50%);
     top:50%;
@@ -8,35 +30,89 @@ ul{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    padding: 0%;
+    justify-content: center;
+    padding: 2%;
+}
+#heading{
+  transform: rotate(2deg);
+  padding: 0.2rem 1.2rem;
+  border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
+  background-color: hsla(166, 100%, 50%, 0.7);
+  font-size: 250%;
+  margin-bottom: 0%;
+  color: #3b4747;
 }
 input,#button{
-    /* width: 100%; */
     position: relative;
     height: 20%;
+    font-family: 'Gochi Hand', cursive;
 
 }
 #button{
   margin-left: 0%;
   padding-left: 0%;
+  background-color:#fd5fdb;
+  border-color: #fd5fdb;
+  border-style: solid;
+  border-radius: 10px;
+  color:#ffffff;
+  padding: 6px;
+  aspect-ratio: 1;
+  width: 5%;
 }
-input{
+input[type=text]{
     margin-left: 5%;
+    border-bottom:5px dashed pink;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: #43444400;
 }
 li{
   list-style-type: none;
-  background-color: rgba(255, 0, 0, 0.356);
+  margin: 2%;
   width: 100%;
   height: 50%;
+}
+.checkbox{
+  position: relative;
+  margin-left:4%;
+  margin-bottom: 0%;
+  left: 2%;
 }
 p{
     display: inline;
     position: relative;
-    left: 10%;
+    left: 13%;
     font-size:10px;
+    color:rgba(100, 100, 119, 0.788);
+    font-weight: 600;
 }
  #entry{
   display: flex;
   justify-content: space-evenly;
+ }
+ span{
+  font-weight:700;
+  font-size: 20px;
+  color: rgba(90, 154, 156, 0.884);
+ }
+ h6{
+   margin-top: 3%;
+   color: #5f6363;
+ }
+ input:focus,input:active{
+   border: 3px solid pink;
+   border-radius: 10px;
+   outline: pink;
+ }
+ span,p{
+  margin-left: 2%;
+ }
+ input[type=checkbox]{
+  background-color: #5f636300;
+  appearance: none;
+  border: 3px solid rgb(123, 123, 170);
+  padding :1%;
+  border-radius: 10px;
  }

@@ -3,16 +3,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Document</title>
 <link rel="stylesheet" href="crud.css" />
+<script src="https://kit.fontawesome.com/f029a601af.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <div class="container">
 <ul id="ul">
+  <div id="heading">TO - DO List</div>
+  <h6>~ ~ ~ today i have to do ~ ~ ~</h6>
+  <br>
   <li id="entry">
-    <input type="text" id="title" placeholder="title">
-    <input type="text" name="text" id="dtn" placeholder="description" />
-    <button type="submit" id="button">ADD</button>
+    <input type="text" id="title" placeholder="  Title">
+    <input type="text" name="text" id="dtn" placeholder="  Description" />
+    <button type="submit" id="button">+</button>
   </li>
   <br />
+  
 </ul>
+<img src="sticker.png" alt="">
+</div>
 <script>
   // element selection
   let ul = document.getElementById("ul");
@@ -20,7 +28,6 @@
   let dtn = document.getElementById("dtn");
   let button = document.getElementById("button");
   let chb = document.getElementsByClassName("checkbox");
-  let div = document.getElementById("div");
   chb.type = "checkbox";
   let td,dd;
 
@@ -35,6 +42,7 @@
     }
   }
 
+  // creates the contents of the list after reload of screen
   for(let i = 0; i<localStorage.length;i++){
     const key = localStorage.key(i);
     const item = localStorage.getItem(key);
@@ -48,6 +56,7 @@
   // adding a event listener to the submit button for creating a new task item
   button.addEventListener("click", onclick);
 
+  // removes the item from the list after checking the checkbox
 function remove(e){
  e.parentElement.remove();
  const li = e.parentElement;
